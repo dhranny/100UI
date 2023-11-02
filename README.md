@@ -1,20 +1,14 @@
-# first_flutter
+# 100UI
 
-A new Flutter project.
+## Introduction
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+100UI is a learning project a i'm building to implement 
+hundred different user interfaces that is in this figma 
+[file](https://www.figma.com/file/Nee2aw2WEUs17rAhR0ah0K/100-UI-Library-Basic)
 
 
+## Purpose
 
-      )// 
+The purpose of this project is to help me get acquainted 
+with different forms of user interface and give me the necessary
+experience to excel as a  flutter developer.
