@@ -1,0 +1,33 @@
+name: first_flutter
+description: A new Flutter project.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  flutter_svg: ^2.0.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: images/Inter-Black.ttf
+        - asset: images/Inter-Medium.ttf
+          weight: 700
+        - asset: images/Inter-Regular.ttf
+  assets:
+    - images/jamie-haughton-Z05GiksmqYU-unsplash.jpg
+    - images/welcome_back.jpeg
+    - images/bg.png
+    - images/pawnadoption.svg
+  uses-material-design: true
