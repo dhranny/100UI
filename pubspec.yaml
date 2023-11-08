@@ -30,4 +30,6 @@ flutter:
     - images/welcome_back.jpeg
     - images/bg.png
     - images/pawnadoption.svg
+    - images/preview.png
+    - images/Symbol.png
   uses-material-design: true
