@@ -2,16 +2,31 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key,});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
   int _counter = 0;
+
+  late final AnimationController controller = AnimationController(
+    duration: const Duration(seconds: 2),
+      vsync: this)
+  ..repeat(max: 1,);
+  late final Animation<double> _animation = CurvedAnimation(
+      parent: controller,
+      curve: Curves.easeOut);
+  @override
+  void initState() {
+    super.initState();
+    repeatOnce();
+  }
+
+  void repeatOnce() async {
+    await controller.forward();
+  }
 
 
   dynamic textArea() {
@@ -62,21 +77,24 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          alignment: Alignment.topLeft,
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("images/welcome_back.jpeg"),
-              fit: BoxFit.cover,
+      body: FadeTransition(
+        opacity: _animation,
+        child: Container(
+            alignment: Alignment.topLeft,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("images/welcome_back.jpeg"),
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          child: BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            child: textArea(),
-          )
-      ),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+              child: textArea(),
+            )
+        ),
+      )
 
     );
   }
