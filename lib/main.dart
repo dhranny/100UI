@@ -1,7 +1,8 @@
-import 'dart:ui';
-import 'package:first_flutter/checkout.dart';
+//import 'dart:ui';
+//import 'package:first_flutter/checkout.dart';
 import 'package:first_flutter/meow_ui.dart';
-import 'package:first_flutter/octagon_ui.dart';
+import 'package:first_flutter/disover.dart';
+import 'package:first_flutter/strawhat.dart';
 import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
@@ -20,11 +21,11 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        'octagon': (context) => MyHomePage(),
+        'octagon': (context) => const DiscoverScreen(),
         'meow': (context) => MeowUi()
       },
 
-      home: Checkout(),
+      home: Strawhat(),
     );
   }
 }

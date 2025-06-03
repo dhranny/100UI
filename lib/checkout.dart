@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Checkout extends StatefulWidget{
+  const Checkout({super.key});
+
   @override
   State<StatefulWidget> createState() {
-    return new CheckoutState();
+    return CheckoutState();
   }
 }
 
@@ -56,20 +58,20 @@ class CheckoutState extends State<Checkout>{
       decoration: const BoxDecoration(
         color: Colors.white
       ),
-      padding: EdgeInsets.only(left: 20),
+      padding: const EdgeInsets.only(left: 20),
       child:  Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
             child: Text("Shipping Address", style: headText()),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("234 Sorest Street Lincointon, NC 28092", style: subText()),
-              Padding(
+              const Padding(
                   padding: EdgeInsets.only(right: 20),
                 child: Icon(Icons.done),
               )
@@ -89,7 +91,7 @@ class CheckoutState extends State<Checkout>{
                     Text("2 Deliveries",style: subText()),
                     Text("From French & Italy", style: subText())
                   ]
-              ),Padding(
+              ),const Padding(
                 padding: EdgeInsets.only(right: 20),
                 child: Icon(Icons.done),
               )
@@ -112,7 +114,7 @@ class CheckoutState extends State<Checkout>{
             child: Divider(),
           ),
           Padding(
-            padding: EdgeInsets.only(bottom: 15),
+            padding: const EdgeInsets.only(bottom: 15),
             child: Text('Discount promocode',
                 style: subText()
             ),
@@ -125,14 +127,14 @@ class CheckoutState extends State<Checkout>{
   }
   Widget checkoutBody(BuildContext context){
     return Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Color(0xFFFAFAFA),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     color: Color(0xFFFFC300)
                 ),
                 alignment: Alignment.center,
@@ -140,7 +142,7 @@ class CheckoutState extends State<Checkout>{
                     minWidth: MediaQuery.of(context).size.width,
                     minHeight: MediaQuery.of(context).size.height / 13
                 ),
-                child: Text('Delivery carefully to your door\nIt is completely free',
+                child: const Text('Delivery carefully to your door\nIt is completely free',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontFamily: 'Inter', fontSize: 16, fontWeight: FontWeight.w500),
                 )
@@ -148,7 +150,7 @@ class CheckoutState extends State<Checkout>{
             second_RowWithPicture(context),
             third_ColoumnWithSeperator(context),
             Padding(
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -174,15 +176,15 @@ class CheckoutState extends State<Checkout>{
                     onPressed: () => {
                       Navigator.pushNamed(context, 'meow')
                     },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFFFFC300),
+
+                    ),
                     child: Text(r'Place Order', style: TextStyle(
                       fontFamily: 'inter',
                       fontSize: 20,
                       color: Colors.black
                     )),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFFFC300),
-
-                    ),
                   )
                 ],
               )
@@ -206,9 +208,11 @@ class CheckoutState extends State<Checkout>{
         ),
         centerTitle: true,
         leadingWidth: MediaQuery.of(context).size.width/5,
-        title: Text('Checkout', textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Inter'),),
+        title: const Text('Checkout', textAlign: TextAlign.center, style: TextStyle(fontFamily: 'Inter'),),
     ),
-      body: checkoutBody(context),
+      body: SingleChildScrollView(
+        child: checkoutBody(context)
+      )
     );
   }
 }
