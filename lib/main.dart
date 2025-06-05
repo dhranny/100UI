@@ -1,6 +1,6 @@
 //import 'dart:ui';
 //import 'package:first_flutter/checkout.dart';
-import 'package:_100ui/meow_ui.dart';
+import 'package:_100ui/game.dart';
 import 'package:_100ui/octagon_ui.dart';
 import 'package:_100ui/checkout.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlue),
         useMaterial3: true,
       ),
-      routes: {'meow': (context) => MeowUi()},
-      home: Checkout(),
+      home: Game(),
     );
   }
 }
